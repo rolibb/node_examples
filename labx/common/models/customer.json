@@ -1,0 +1,42 @@
+{
+  "name": "customer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "telefono": {
+      "type": "number",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "order",
+      "foreignKey": "cliente_id"
+  },
+    "direcciones": {
+        "type": "embedsMany",
+        "model": "direccion",
+        "property": "direcciones",
+        "options": {
+            "validate": true,
+            "forceId": true,
+            "persistent": true
+        }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

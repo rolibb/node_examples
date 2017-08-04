@@ -1,0 +1,10 @@
+{
+  "mongo": {
+    "host": "locahost",
+    "port": 27017,
+    "url": "mongodb://localhost:27017/labx",
+    "database": "labx",
+    "name": "mongo",
+    "connector": "mongodb"
+  }
+}

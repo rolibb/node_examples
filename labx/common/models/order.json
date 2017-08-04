@@ -1,0 +1,37 @@
+{
+  "name": "order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cantidad": {
+      "type": "number",
+      "required": true
+    },
+    "producto_id": {
+      "type": "string",
+      "required": true
+    },
+    "cliente_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "client": {
+      "type": "belongsTo",
+      "model": "customer",
+      "foreignKey": "cliente_id"
+    },
+    "producto": {
+      "type": "belongsTo",
+      "model": "producto",
+      "foreignKey": "producto_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
