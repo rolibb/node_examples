@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
+
 var ObjectID = require('mongodb').ObjectID;
 
 router.get('/', function(req, res) {
   var mongo = req.mongo;
-
   mongo.collection('doctors').find().toArray(function(err, docs){
      res.json(docs);
   });
@@ -21,6 +21,7 @@ router.get('/:id', function(req, res){
         res.json(doc);
     });
 });
+
 
 router.post('/', function(req, res) {
     var mongo = req.mongo;
@@ -42,6 +43,7 @@ router.post('/', function(req, res) {
     });
 });
 
+
 router.put('/:id', function(req, res){
     var id = req.params.id;
     var body = req.body;
@@ -62,14 +64,14 @@ router.put('/:id', function(req, res){
                   }
 
                   res.json(doc);
-            });;
+            });
 
         });
     } else {
         res.status(400).json('Bad Request');
     }
 });
-
+//
 // const updateUser = async (req, res, body, mongo ) => {
 //     var id = req.params.id;
 //     var body = req.body;

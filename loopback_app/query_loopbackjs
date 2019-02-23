@@ -1,0 +1,4 @@
+{ "filter": {"where": { "name": "597a8502fce0e399a1fbfe33"}}}
+{ "include": "orders"}
+{ "include": { "orders": ["product"]}}
+{"fields": {"name":true, "email":true}}

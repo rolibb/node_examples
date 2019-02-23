@@ -1,0 +1,25 @@
+{
+  "name": "estudiante",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "cod_sis": {
+      "type": "number",
+      "required": true
+    },
+    "telefono": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

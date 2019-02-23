@@ -1,0 +1,36 @@
+{
+  "name": "materia",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "codigo": {
+      "type": "string",
+      "required": true
+    },
+    "grupo": {
+      "type": "number",
+      "required": true
+  },
+  "carrera_id": {
+      "type": "string",
+      "required": true
+  }
+  },
+  "validations": [],
+  "relations": {
+      "carrera": {
+          "type" : "belongsTo",
+          "model": "carrera",
+          "foreignKey": "carrera_id"
+      }
+  },
+  "acls": [],
+  "methods": {}
+}

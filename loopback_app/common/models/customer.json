@@ -1,0 +1,41 @@
+{
+  "name": "customer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "order",
+      "foreignKey": "customer_id"
+  },
+  "address": {
+      "type": "embedsMany",
+      "model": "address",
+      "property": "locationAddress",
+      "options": {
+        "validate": true,
+        "forceId": true,
+        "persistent": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

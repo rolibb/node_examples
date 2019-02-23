@@ -1,0 +1,45 @@
+{
+  "name": "doctor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellido": {
+      "type": "string",
+      "required": true
+    },
+    "celular": {
+      "type": "number",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "created": {
+      "type": {
+        "defaultFn": "now"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "direccion": {
+      "type": "embedsMany",
+      "model": "direccion",
+      "property": "direcciones",
+      "options": {
+        "validate": true,
+        "forceId": true,
+        "persistent": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -13,7 +13,7 @@ var doctor = require('./routes/doctor');
 
 var mongo ;
 
-MongoClient.connect('mongodb://localhost:27017/lab_xentiz', function (err, db) {
+MongoClient.connect('mongodb://localhost:27017/curso_node', function (err, db) {
   if (err) throw err;
   mongo = db;
 });

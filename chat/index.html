@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chat</title>
+    </head>
+    <body>
+        <div class="">
+            Chat
+        </div>
+        <div id="future_messages">
+
+        </div>
+        <div>
+            <input id="message" type="text" name="message" value="">
+            <button id="send" type="button" name="button"> Send</button>
+        </div>
+
+        <script src="/socket.io/socket.io.js"> </script>
+        <!-- <script src="/jquery/dist/jquery.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            var socket = io.connect('http://localhost:8000');
+
+            socket.on('connect', function(data){
+                console.log(data);
+            });
+
+            socket.on('chat_client', function(mensaje){
+                console.log(mensaje);
+                var ms = '<div>' + mensaje + '</div>';
+                $('#future_messages').append(ms);
+            });
+
+            $('#send').on('click', function(){
+                var value = $('#message').val();
+                $('#message').val('');
+                // console.log(value);
+                socket.emit('chat', value);
+            });
+
+        </script>
+    </body>
+</html>

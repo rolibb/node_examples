@@ -1,0 +1,28 @@
+{
+  "name": "direccion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "calle": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "number"
+    },
+    "zona": {
+      "type": "string",
+      "required": true
+    },
+    "telefono": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

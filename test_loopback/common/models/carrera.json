@@ -1,0 +1,29 @@
+{
+  "name": "carrera",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "duracion": {
+        "type": "number",
+        "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+      "materias": {
+          "type": "hasMany",
+          "model": "materia",
+          "foreignKey": "carrera_id"
+      }
+  },
+  "acls": [],
+  "methods": {}
+}
